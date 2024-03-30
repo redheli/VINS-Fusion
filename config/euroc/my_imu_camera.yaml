@@ -15,7 +15,7 @@ image_height: 1080
    
 
 # Extrinsic parameter between IMU and Camera.
-estimate_extrinsic: 0   # 0  Have an accurate extrinsic parameters. We will trust the following imu^R_cam, imu^T_cam, don't change it.
+estimate_extrinsic: 1   # 0  Have an accurate extrinsic parameters. We will trust the following imu^R_cam, imu^T_cam, don't change it.
                         # 1  Have an initial guess about extrinsic parameters. We will optimize around your initial guess.
 
 body_T_cam0: !!opencv-matrix
@@ -27,11 +27,16 @@ body_T_cam0: !!opencv-matrix
            0.00393775,-0.999987,0.00316347, 0.0,
            0, 0, 0, 1]
 
+#    data: [1.0,0.0,0.0, 0.0,
+#            0.0,1.0,0.0, 0.0,
+#            0.0,0.0,1.0, 0.0,
+#            0, 0, 0, 1]
+
 #Multiple thread support
 multiple_thread: 1
 
 #feature traker paprameters
-max_cnt: 150            # max feature number in feature tracking
+max_cnt: 300            # max feature number in feature tracking
 min_dist: 30            # min distance between two features 
 freq: 10                # frequence (Hz) of publish tracking result. At least 10Hz for good estimation. If set 0, the frequence will be same as raw image 
 F_threshold: 1.0        # ransac threshold (pixel)
