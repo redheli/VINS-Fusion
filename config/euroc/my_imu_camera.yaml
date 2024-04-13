@@ -27,6 +27,10 @@ body_T_cam0: !!opencv-matrix
            0.00393775,-0.999987,0.00316347, 0.0,
            0, 0, 0, 1]
 
+# init R0
+# 1 -1.36655e-05 -0.000856979
+#            0     0.999873   -0.0159441
+#  0.000857088    0.0159441     0.999873
 #    data: [1.0,0.0,0.0, 0.0,
 #            0.0,1.0,0.0, 0.0,
 #            0.0,0.0,1.0, 0.0,
@@ -62,4 +66,4 @@ td: 0.0                             # initial value of time offset. unit: s. rea
 #loop closure parameters
 load_previous_pose_graph: 0        # load and reuse previous pose graph; load from 'pose_graph_save_path'
 pose_graph_save_path: "~/output/pose_graph/" # save and load path
-save_image: 1                   # save image in pose graph for visualization prupose; you can close this function by setting 0 
+save_image: 0                   # save image in pose graph for visualization prupose; you can close this function by setting 0 
